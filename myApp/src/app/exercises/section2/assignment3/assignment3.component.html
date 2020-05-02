@@ -22,9 +22,9 @@
   <button class="btn" (click)="onClick()">Display Details</button>
   <p *ngIf="buttonIsClicked === true">My Paragraph for display</p>
   <p
-    *ngFor="let buttonData of buttonClicks"
-    [ngStyle]="{ backgroundColor: getBackgroundColor(buttonData) }"
-    [ngClass]="{ white: buttonData >= 5 }"
+    *ngFor="let buttonData of buttonClicks; let i = index"
+    [ngStyle]="{ backgroundColor: getBackgroundColor(i) }"
+    [ngClass]="{ white: i >= 5 }"
   >
     {{ buttonData }}
   </p>
