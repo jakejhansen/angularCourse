@@ -1,0 +1,31 @@
+<ol>
+  <li>Add A button which says 'Display Details'</li>
+  <li>
+    Add a paragraph with any content of your choice (e.g. 'Secret Password =
+    tuna')
+  </li>
+  <li>
+    Toggle the displaying of that paragraph with the button created in the first
+    step
+  </li>
+  <li>
+    Log all button clicks in an array and output that array below the secret
+    paragraph (maybe log a timestamp or simply an incrementing number)
+  </li>
+  <li>
+    Starting at the 5th log item, give all future log items a blue background
+    (via ngStyle) and white color (ngClass)
+  </li>
+</ol>
+<hr />
+<div class="container mt-4">
+  <button class="btn" (click)="onClick()">Display Details</button>
+  <p *ngIf="buttonIsClicked === true">My Paragraph for display</p>
+  <p
+    *ngFor="let buttonData of buttonClicks"
+    [ngStyle]="{ backgroundColor: getBackgroundColor(buttonData) }"
+    [ngClass]="{ white: buttonData >= 5 }"
+  >
+    {{ buttonData }}
+  </p>
+</div>
